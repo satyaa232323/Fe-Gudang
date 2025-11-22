@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { logout, getToken } from './auth';
+import { logout, getToken } from './Auth';
 
 /**
  * Verify if the current token is valid by making a test request to the API
@@ -16,7 +16,7 @@ export const verifyToken = async () => {
 
     try {
         // Make a request to your API's user verification endpoint
-        const response = await axios.get('http://127.0.0.1:8000/api/user', {
+        const response = await axios.get('/api/user', {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Accept': 'application/json'
